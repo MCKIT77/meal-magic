@@ -26,7 +26,7 @@ section {
 .container{
     width: 90%;
     height: auto;
-    max-width: 1200px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
@@ -42,13 +42,23 @@ form {
     max-width: 400px;
     margin: 20px auto;
     background-color: white;
+    border-radius: 30px;
 }
 form input {
-    width: 100%;
+    width: 90%;
     background-color: transparent;
     padding: 10px;
     border-radius: 7px;
     border: none;
     outline: none;
-    font-size: 2rem;
+    font-size: 1.5rem;
+    display: inline-block;
+}
+
+.search-result{
+    margin-top: 50px;
+    width: 100%;
+    display: grid;
+    grid-gap: 25px;
+    grid-template: auto / repeat(auto-fit, minmax(300px, 1 fr));
 }
