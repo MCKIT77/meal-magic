@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
 </head>
 
 <body>
@@ -19,6 +21,45 @@
         <form>
             <input type="text" placeholder="Search your recipe...">
         </form>
+        <div id="accordion">
+            <div class="card">
+              <div class="card-header" id="heading1">
+                <h5 class="mb-0">
+                  <button class="btn btn-link" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">Allergies</button>
+                </h5>
+              </div>
+              <div id="collapse1" class="collapse show" aria-labelledby="heading1" data-parent="#accordion">
+                <div class="card-body">
+                  
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="heading2">
+                <h5 class="mb-0">
+                  <button class="btn btn-link" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">Diets</button>
+                </h5>
+              </div>
+              <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordion">
+                <div class="card-body">
+                    <ul>
+                        <li>Vegan</li>
+                        <li>Vegetarian</li>
+                        <li>Paleo</li>
+                        <li>Keto</li>
+                        <li>Gluten-Free</li>
+                        <li>Kosher</li>
+                        <li>Sugar-Free</li>
+                        <li>Pescatarian</li>
+                        <li>Carnivore</li> 
+                      </ul>
+                 
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        
             <div class="search-result">
                 <div class="item">
                     <img src="assets/img/image.jpg" alt="noodles">
@@ -53,6 +94,10 @@
         
     </div>
 </section>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
 
 </html>
