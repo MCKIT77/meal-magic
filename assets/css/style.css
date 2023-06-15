@@ -96,3 +96,7 @@ ul {
   text-decoration: none;
   list-style-type: none;
 }
+
+.hide {
+  display: none;
+}
