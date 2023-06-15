@@ -1,7 +1,5 @@
 
 var containerEl = document.getElementById('container');
-var reqUrl =
-    'https://api.edamam.com/api/recipes/v2?type=public&q=chicken%20noodles&app_id=3363fcd5&app_key=fee91a78bd642adc08094cc80cd02704&health=tree-nut-free&imageSize=SMALL';
 var baseEdamamUrl = 'https://api.edamam.com/api/recipes/v2?type=public';
 var authUrl = 'app_id=3363fcd5&app_key=fee91a78bd642adc08094cc80cd02704';
 var searchBtnEl = $('#searchBtn');
@@ -41,45 +39,6 @@ function buildReq(event) {
         getReq(endReqUrl);
     }
 }
-var reqUrl = "https://api.edamam.com/api/recipes/v2?type=public&q='chicken''noodles'&app_id=3363fcd5&app_key=fee91a78bd642adc08094cc80cd02704&health=tree-nut-free&imageSize=SMALL";
-var baseEdamamUrl = 'https://api.edamam.com/api/recipes/v2?type=public';
-var authUrl = 'app_id=3363fcd5&app_key=fee91a78bd642adc08094cc80cd02704';
-var searchBtnEl = $('searchBtn');
-
-//this function will take in user input to build the request link for the api call
-
-function buildReq(event) {
-    event.preventDefault();
-
-
-
-    if (event.target === searchBtnEl) {
-
-        var queryQ = $('q').val.trim();
-        var healthQ = $('health').val.trim();
-        var endReqUrl = `${baseEdamamUrl}&q=${queryQ}&${authUrl}&health=${healthQ}&imageSize=SMALL`;
-        return endReqUrl
-    }
-
-    getReq(endReqUrl);
-
-
-
-
-
-
-
-
-
-}
-
-function handleLinkClick(event) {
-    window.location.replace('endpoint.html');
-}
-
-
-
-
 
 
 function createCard(recipe) {
@@ -125,16 +84,5 @@ function getReq(endReqUrl) {
         });
 }
 
-function getReqTest() {
-
-    fetch(reqUrl)
-        .then(function (response) {
-            console.log(response.json());
-            return response.json();
-        })
-        .then(function (data) {
-            displayRecipes(data);
-        });
-}
 
 searchBtnEl.on('click', buildReq);
