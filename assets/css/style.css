@@ -91,12 +91,3 @@ form input {
 .collapse:not(.show) {
   display: none;
 }
-
-ul {
-  text-decoration: none;
-  list-style-type: none;
-}
-
-.hide {
-  display: none;
-}
