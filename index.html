@@ -8,236 +8,156 @@
   <title>MealMagic</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/css/style.css">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Ubuntu&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 
-  </head>
 
-  <body>
-    <section>
-      <div class="container">
-        <h1 class="logo">MealMagic</h1>
-        <form id="recipeForm">
-          <input id="q" placeholder="Search your recipe...">
-          <button id="searchBtn" class="btn btn-primary">Search</button>
-        </form>
+</head>
 
-          <div id="accordion">
-            <div class="card">
-              <div class="card-header" id="heading1">
-                <h5 class="mb-0">
-                  <button class="btn btn-link" data-toggle="collapse" data-target="#collapse1" aria-expanded="true"
-                    aria-controls="collapse1">Allergies</button>
-                </h5>
-              </div>
-              <div id="collapse1" class="collapse" aria-labelledby="heading1" data-parent="#accordion">
-                <div class="card-body">
-                  <div class="form-group">
-                    <label>Allergy Specifications:</label>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="celeryCheckbox" value="celery-free">
-                      <label class="form-check-label" for="celeryCheckbox">Celery-free</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="crustaceanCheckbox" value="crustacean-free">
-                      <label class="form-check-label" for="crustaceanCheckbox">Crustacean-free</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="dairyCheckbox" value="dairy-free">
-                      <label class="form-check-label" for="dairyCheckbox">Dairy-free</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="eggCheckbox" value="egg-free">
-                      <label class="form-check-label" for="eggCheckbox">Egg-free</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="fishCheckbox" value="fish-free">
-                      <label class="form-check-label" for="fishCheckbox">Fish-free</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="glutenCheckbox" value="gluten-free">
-                      <label class="form-check-label" for="glutenCheckbox">Gluten-free</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="lupineCheckbox" value="lupine-free">
-                      <label class="form-check-label" for="lupineCheckbox">Lupine-free</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="mustardCheckbox" value="mustard-free">
-                      <label class="form-check-label" for="mustardCheckbox">Mustard-free</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="peanutCheckbox" value="peanut-free">
-                      <label class="form-check-label" for="peanutCheckbox">Peanut-free</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="sesameCheckbox" value="sesame-free">
-                      <label class="form-check-label" for="sesameCheckbox">Sesame-free</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="shellfishCheckbox" value="shellfish-free">
-                      <label class="form-check-label" for="shellfishCheckbox">Shellfish-free</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="soyCheckbox" value="soy-free">
-                      <label class="form-check-label" for="soyCheckbox">Soy-free</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="treeNutCheckbox" value="tree-nut-free">
-                      <label class="form-check-label" for="treeNutCheckbox">Tree-Nut-free</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="wheatCheckbox" value="wheat-free">
-                      <label class="form-check-label" for="wheatCheckbox">Wheat-free</label>
-                    </div>
+<body>
+  <section>
+    <div class="container">
+      <h1 class="logo">MealMagic</h1>
+      <form id="recipeForm">
+        <input id="q" placeholder="Search your recipe...">
+        <button id="searchBtn" class="btn btn-primary">Search</button>
+      </form>
 
-                  </div>
+      <div id="accordion">
+        <div class="card">
+          <div class="card-header" id="heading1">
+            <h5 class="mb-0">
+              <button class="btn btn-link" data-toggle="collapse" data-target="#collapse1" aria-expanded="true"
+                aria-controls="collapse1">Allergies</button>
+            </h5>
+          </div>
+          <div id="collapse1" class="collapse" aria-labelledby="heading1" data-parent="#accordion">
+            <div class="card-body">
+              <div class="form-group">
+                <label>Allergy Specifications:</label>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="celeryCheckbox" value="celery-free" name="health">
+                  <label class="form-check-label" for="celeryCheckbox">Celery-free</label>
                 </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-header" id="heading2">
-                <h5 class="mb-0">
-                  <button class="btn btn-link" data-toggle="collapse" data-target="#collapse2" aria-expanded="true"
-                    aria-controls="collapse2">Diets</button>
-                </h5>
-              </div>
-              <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordion">
-                <div class="card-body">
-                  <form id="dietsForm">
-                    <div class="form-group">
-                      <label>Diets:</label>
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="alcoholFreeCheckbox" value="alcohol-free">
-                        <label class="form-check-label" for="alcoholFreeCheckbox">Alcohol-free</label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="balancedCheckbox" value="balanced">
-                        <label class="form-check-label" for="balancedCheckbox">Balanced</label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="highFiberCheckbox" value="high-fiber">
-                        <label class="form-check-label" for="highFiberCheckbox">High-Fiber</label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="highProteinCheckbox" value="high-protein">
-                        <label class="form-check-label" for="highProteinCheckbox">High-Protein</label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="ketoCheckbox" value="keto">
-                        <label class="form-check-label" for="ketoCheckbox">Keto</label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="kidneyFriendlyCheckbox"
-                          value="kidney-friendly">
-                        <label class="form-check-label" for="kidneyFriendlyCheckbox">Kidney friendly</label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="kosherCheckbox" value="kosher">
-                        <label class="form-check-label" for="kosherCheckbox">Kosher</label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="lowCarbCheckbox" value="low-carb">
-                        <label class="form-check-label" for="lowCarbCheckbox">Low-Carb</label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="lowFatCheckbox" value="low-fat">
-                        <label class="form-check-label" for="lowFatCheckbox">Low-Fat</label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="lowPotassiumCheckbox" value="low-potassium">
-                        <label class="form-check-label" for="lowPotassiumCheckbox">Low potassium</label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="lowSodiumCheckbox" value="low-sodium">
-                        <label class="form-check-label" for="lowSodiumCheckbox">Low-Sodium</label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="noOilAddedCheckbox" value="no-oil-added">
-                        <label class="form-check-label" for="noOilAddedCheckbox">No oil added</label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="noSugarCheckbox" value="no-sugar">
-                        <label class="form-check-label" for="noSugarCheckbox">No-sugar</label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="paleoCheckbox" value="paleo">
-                        <label class="form-check-label" for="paleoCheckbox">Paleo</label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="pescatarianCheckbox" value="pescatarian">
-                        <label class="form-check-label" for="pescatarianCheckbox">Pescatarian</label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="porkFreeCheckbox" value="pork-free">
-                        <label class="form-check-label" for="porkFreeCheckbox">Pork-free</label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="redMeatFreeCheckbox" value="red-meat-free">
-                        <label class="form-check-label" for="redMeatFreeCheckbox">Red meat-free</label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="sugarConsciousCheckbox"
-                          value="sugar-conscious">
-                        <label class="form-check-label" for="sugarConsciousCheckbox">Sugar-conscious</label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="veganCheckbox" value="vegan">
-                        <label class="form-check-label" for="veganCheckbox">Vegan</label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="vegetarianCheckbox" value="vegetarian">
-                        <label class="form-check-label" for="vegetarianCheckbox">Vegetarian</label>
-                      </div>
-                    </div>
-                  </form>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="crustaceanCheckbox" value="crustacean-free"
+                    name="health">
+                  <label class="form-check-label" for="crustaceanCheckbox">Crustacean-free</label>
                 </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="dairyCheckbox" value="dairy-free" name="health">
+                  <label class="form-check-label" for="dairyCheckbox">Dairy-free</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="eggCheckbox" value="egg-free" name="health">
+                  <label class="form-check-label" for="eggCheckbox">Egg-free</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="fishCheckbox" value="fish-free" name="health">
+                  <label class="form-check-label" for="fishCheckbox">Fish-free</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="glutenCheckbox" value="gluten-free" name="health">
+                  <label class="form-check-label" for="glutenCheckbox">Gluten-free</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="lupineCheckbox" value="lupine-free" name="health">
+                  <label class="form-check-label" for="lupineCheckbox">Lupine-free</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="mustardCheckbox" value="mustard-free"
+                    name="health">
+                  <label class="form-check-label" for="mustardCheckbox">Mustard-free</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="peanutCheckbox" value="peanut-free" name="health">
+                  <label class="form-check-label" for="peanutCheckbox">Peanut-free</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="sesameCheckbox" value="sesame-free" name="health">
+                  <label class="form-check-label" for="sesameCheckbox">Sesame-free</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="shellfishCheckbox" value="shellfish-free"
+                    name="health">
+                  <label class="form-check-label" for="shellfishCheckbox">Shellfish-free</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="soyCheckbox" value="soy-free" name="health">
+                  <label class="form-check-label" for="soyCheckbox">Soy-free</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="treeNutCheckbox" value="tree-nut-free"
+                    name="health">
+                  <label class="form-check-label" for="treeNutCheckbox">Tree-Nut-free</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="wheatCheckbox" value="wheat-free" name="health">
+                  <label class="form-check-label" for="wheatCheckbox">Wheat-free</label>
+                </div>
+
               </div>
             </div>
           </div>
-
-
-        <div id="container">
-            <div class="item">
-                <img src="assets\img\img.jpg" alt="placeholder image">
-                <div class="flex-container">
-                    <h1 class="title"> Recipe</h1>
-                    <a class="view" href="#">view recipe</a>
-                </div>
-                <p class="item-data"></p>
-            </div>
-            <div class="item">
-                <img src="assets\img\img.jpg" alt="placeholder image">
-                <div class="flex-container">
-                    <h1 class="title"> Recipe</h1>
-                    <a class="view" href="#">view recipe</a>
-                </div>
-                <p class="item-data"></p>
-            </div>
-            <div class="item">
-                <img src="assets\img\img.jpg" alt="placeholder image">
-                <div class="flex-container">
-                    <h1 class="title"> Recipe</h1>
-                    <a class="view" href="#">view recipe</a>
-                </div>
-                <p class="item-data"></p>
-            </div>
         </div>
-
-   
+        <div class="card">
+          <div class="card-header" id="heading2">
+            <h5 class="mb-0">
+              <button class="btn btn-link" data-toggle="collapse" data-target="#collapse2" aria-expanded="true"
+                aria-controls="collapse2">Diets</button>
+            </h5>
+          </div>
+          <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordion">
+            <div class="card-body">
+              <form id="dietsForm">
+                <div class="form-group">
+                  <label>Diets:</label>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="balancedCheckbox" value="balanced" name="diet">
+                    <label class="form-check-label" for="balancedCheckbox">Balanced</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="highFiberCheckbox" value="high-fiber"
+                      name="diet">
+                    <label class="form-check-label" for="highFiberCheckbox">High Fiber</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="highProteinCheckbox" value="high-protein"
+                      name="diet">
+                    <label class="form-check-label" for="highProteinCheckbox">High Protein</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="lowCarbCheckbox" value="low-carb" name="diet">
+                    <label class="form-check-label" for="lowCarbCheckbox">Low Carb</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="lowSodiumCheckbox" value="low-sodium"
+                      name="diet">
+                    <label class="form-check-label" for="lowSodiumCheckbox">Low Sodium</label>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
+      <div id="container" class="container-lg"></div>
 
-    </section>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="assets/js/index.js"></script>
+
+  </section>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="./assets/js/index.js"></script>
+
+</body>
+
 
 </html>
