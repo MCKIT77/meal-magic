@@ -5,6 +5,21 @@ $(document).ready(function () {
     var authUrl = 'app_id=3363fcd5&app_key=fee91a78bd642adc08094cc80cd02704';
     var searchBtnEl = $('#searchBtn');
 
+    document.querySelectorAll('.form-check-input').forEach(function (toggle) {
+        toggle.addEventListener('change', function () {
+            // Handle toggle change event
+            if (this.checked) {
+                // Toggle is checked
+                console.log('Toggle is checked:', this.id);
+                // Perform desired action
+            } else {
+                // Toggle is unchecked
+                console.log('Toggle is unchecked:', this.id);
+                // Perform desired action
+            }
+        });
+    });
+
     // This function will take user input to build the request link for the API call
     function buildReq(event) {
         event.preventDefault();
@@ -84,6 +99,7 @@ $(document).ready(function () {
                 displayRecipes(data);
             });
     }
+
 
     searchBtnEl.on('click', buildReq);
 });
