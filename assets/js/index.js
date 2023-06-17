@@ -1,105 +1,88 @@
-//making sure document is ready before we run our code
-$(document).ready(function () {
-    var containerEl = document.getElementById('container');
-    var baseEdamamUrl = 'https://api.edamam.com/api/recipes/v2?type=public';
-    var authUrl = 'app_id=3363fcd5&app_key=fee91a78bd642adc08094cc80cd02704';
-    var searchBtnEl = $('#searchBtn');
-
-    document.querySelectorAll('.form-check-input').forEach(function (toggle) {
-        toggle.addEventListener('change', function () {
-            // Handle toggle change event
-            if (this.checked) {
-                // Toggle is checked
-                console.log('Toggle is checked:', this.id);
-                // Perform desired action
-            } else {
-                // Toggle is unchecked
-                console.log('Toggle is unchecked:', this.id);
-                // Perform desired action
-            }
-        });
+// Execute the following code when the document is ready
+$(document).ready(function() {
+   
+    // Select the <form> element and store it in the "searchForm" variable
+    var searchForm = $('form');
+    
+    // Select the element with class "search-result" and store it in the "searchResultDiv" variable
+    var searchResultDiv = $('.search-result');
+    
+     // Initialize an empty string variable "searchQuery" to store the search query
+    var searchQuery = '';
+   
+    // Set the values for the APP_ID and APP_key variables for the API request
+    var APP_ID = '3363fcd5';
+    var APP_key = 'fee91a78bd642adc08094cc80cd02704';
+    
+    // Attach a submit event listener to the search form
+    searchForm.on('submit', function(event) {
+      
+        // Prevent the default form submission behavior
+      event.preventDefault();
+      
+        // Get the value of the input field inside the form and store it in the "searchQuery" variable
+      searchQuery = $(this).find('input').val();
+      
+        // Call the fetchAPI function to make the API request
+      fetchAPI();
+      
     });
-
-    // This function will take user input to build the request link for the API call
-    function buildReq(event) {
-        event.preventDefault();
-        event.stopPropagation();
-
-        if (event.target === searchBtnEl[0]) {
-            var queryQ = $('#q').val();
-            var healthQ = [];
-            var dietQ = [];
-
-            // Get selected health options
-            $('input[name="health"]:checked').each(function () {
-                healthQ.push($(this).val());
-            });
-
-            // Get selected diet options
-            $('input[name="diet"]:checked').each(function () {
-                dietQ.push($(this).val());
-            });
-
-            // Build the request URL with query, health, and diet parameters
-            var endReqUrl = `${baseEdamamUrl}&q=${queryQ}&${authUrl}&imageSize=LARGE`;
-
-            if (healthQ.length > 0) {
-                endReqUrl += `&health=${healthQ.join(',')}`;
-            }
-
-            if (dietQ.length > 0) {
-                endReqUrl += `&diet=${dietQ.join(',')}`;
-            }
-            console.log(endReqUrl);
-
-            getReq(endReqUrl);
-        }
+    
+      // Attach a click event listener to elements with class "ion-icon"
+    $('.ion-icon').on('click', function() {
+        // Get the value of the input field inside the search form and store it in the "searchQuery" variable
+      searchQuery = searchForm.find('input').val();
+      
+        // Call the fetchAPI function to make the API request
+      fetchAPI();
+      
+    });
+    // Declare an asynchronous function named fetchAPI
+    async function fetchAPI() {
+      
+        // Construct the base URL for the API request using the searchQuery, APP_ID, and APP_key variables
+      var baseURL = `https://api.edamam.com/api/recipes/v2?type=public&q=${searchQuery}&app_id=${APP_ID}&app_key=${APP_key}&to=18`;
+      
+        // Make an asynchronous HTTP request to the API and store the response in the "response" variable
+      var response = await fetch(baseURL);
+      
+        // Extract the JSON data from the response and store it in the "data" variable
+      var data = await response.json();
+      
+        // Call the generateHTML function and pass the "hits" property of the data as an argument
+      generateHTML(data.hits);
+      
     }
-
-    function createCard(recipe) {
-        // Create a div to hold the card
-        var cardEl = document.createElement('div');
-        cardEl.classList.add('card');
-
-        var titleEl = document.createElement('h2');
-        titleEl.textContent = recipe.label;
-        cardEl.appendChild(titleEl);
-
-        var imageEl = document.createElement('img');
-        imageEl.classList.add('card-img-top');
-        imageEl.src = recipe.image;
-        cardEl.appendChild(imageEl);
-
-        var ingredientsEl = document.createElement('ul');
-        recipe.ingredients.forEach(function (ingredient) {
-            var liEl = document.createElement('li');
-            liEl.textContent = ingredient.text;
-            ingredientsEl.appendChild(liEl);
-        });
-        cardEl.appendChild(ingredientsEl);
-
-        return cardEl;
+    // Declare a function named generateHTML that takes "results" as a parameter
+    function generateHTML(results) {
+      
+        // Declare an empty string variable "generatedHTML" to store the generated HTML
+      var generatedHTML = '';
+      
+        // Iterate over each item in the "results" array using the forEach method
+      results.forEach(function(result) {
+        
+        // Round the calorie value of the current item and store it in the "calories" variable
+        var calories = Math.round(result.recipe.calories);
+        
+        // Append the HTML code for each item to the "generatedHTML" string
+        generatedHTML += `
+          <div class="item">
+            <img src="${result.recipe.image}" alt="">
+            <div class="flex-container">
+              <h1 class="title">${result.recipe.label}</h1>
+              <a class="view" href="${result.recipe.url}" target="_blank" rel="noopener noreferrer">view recipe</a>
+            </div>
+            <p class="item-data">${result.recipe.healthLabels.join(', ')}</p>
+            <p class="item-data">${result.recipe.dietLabels.join(', ')}</p>
+            <p class="item-data">Calories: ${calories}</p>
+          </div>
+        `;
+        
+      });
+       // Set the HTML content of the searchResultDiv element to the "generatedHTML"
+      searchResultDiv.html(generatedHTML);
+     
     }
-
-    function displayRecipes(data) {
-        containerEl.textContent = '';
-        data.hits.forEach(function (hit) {
-            var recipe = hit.recipe;
-            var cardEl = createCard(recipe);
-            containerEl.appendChild(cardEl);
-        });
-    }
-
-    function getReq(endReqUrl) {
-        fetch(endReqUrl)
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function (data) {
-                displayRecipes(data);
-            });
-    }
-
-
-    searchBtnEl.on('click', buildReq);
-});
+  });
+  
