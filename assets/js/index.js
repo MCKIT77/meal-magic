@@ -53,6 +53,11 @@ $(document).ready(function () {
         titleEl.textContent = recipe.label;
         titleEl.href = 'endpoint.html'; // Set the URL for the recipe label
         titleEl.target = '_blank'; // Open the URL in a new tab
+        titleEl.addEventListener('click', function () {
+            localStorage.setItem('selectedCard', JSON.stringify(recipe));
+
+        });
+
         cardEl.appendChild(titleEl);
 
         var imageEl = document.createElement('img');
