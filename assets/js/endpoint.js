@@ -17,6 +17,8 @@ $(document).ready(function () {
         titleEl.textContent = selectedCard.label;
         recipeContainer.appendChild(titleEl);
 
+
+
         var imageEl = document.createElement('img');
         imageEl.classList.add('card-img-main');
         imageEl.src = selectedCard.image;
@@ -29,6 +31,16 @@ $(document).ready(function () {
             ingredientsEl.appendChild(liEl);
         });
         recipeContainer.appendChild(ingredientsEl);
+
+
+        var urlEl = document.createElement('a');
+        urlEl.classList.add('link');
+
+
+        urlEl.href = selectedCard.url;
+        urlEl.target = '_blank';
+        urlEl.textContent = selectedCard.url;
+        recipeContainer.appendChild(urlEl);
     }
 
     function createCard(recipe) {

@@ -51,7 +51,7 @@ $(document).ready(function () {
 
         var titleEl = document.createElement('a');
         titleEl.textContent = recipe.label;
-        titleEl.href = 'endpoint.html'; // Set the URL for the recipe label
+        titleEl.href = 'endpoint.html';
         titleEl.target = '_blank'; // Open the URL in a new tab
         titleEl.addEventListener('click', function () {
             localStorage.setItem('selectedCard', JSON.stringify(recipe));
