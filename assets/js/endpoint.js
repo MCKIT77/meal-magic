@@ -1,5 +1,7 @@
 $(document).ready(function () {
-    var containerEl = document.getElementById('container');
+
+    //this is what you play the youtube video iframe inside of
+    var videoContainerEl = document.getElementById('videoContainer');
 
 
 
@@ -14,6 +16,7 @@ $(document).ready(function () {
         var recipeContainer = document.getElementById('recipeContainer');
 
         var titleEl = document.createElement('h2');
+        titleEl.classList.add('card-header');
         titleEl.textContent = selectedCard.label;
         recipeContainer.appendChild(titleEl);
 
@@ -27,6 +30,7 @@ $(document).ready(function () {
         var ingredientsEl = document.createElement('ul');
         selectedCard.ingredients.forEach(function (ingredient) {
             var liEl = document.createElement('li');
+            liEl.classList.add('card-body');
             liEl.textContent = ingredient.text;
             ingredientsEl.appendChild(liEl);
         });
@@ -41,37 +45,15 @@ $(document).ready(function () {
         urlEl.target = '_blank';
         urlEl.textContent = selectedCard.url;
         recipeContainer.appendChild(urlEl);
+
+        recipeContainer.appendChild(document.createElement('br'));
+
+        var backBtn = document.createElement('a');
+        backBtn.href = './index.html'
+        backBtn.textContent = 'Back to Homepage';
+        recipeContainer.appendChild(backBtn);
+
     }
 
-    function createCard(recipe) {
-        // Create a div to hold the card
-        var cardEl = document.createElement('div');
-        cardEl.classList.add('card');
 
-        var titleEl = document.createElement('a');
-        titleEl.textContent = recipe.label;
-        titleEl.href = 'endpoint.html'; // Set the URL for the recipe label
-        titleEl.target = '_blank'; // Open the URL in a new tab
-        titleEl.addEventListener('click', function () {
-            localStorage.setItem('selectedCard', JSON.stringify(recipe));
-
-        });
-
-        cardEl.appendChild(titleEl);
-
-        var imageEl = document.createElement('img');
-        imageEl.classList.add('card-img-top');
-        imageEl.src = recipe.image;
-        cardEl.appendChild(imageEl);
-
-        var ingredientsEl = document.createElement('ul');
-        recipe.ingredients.forEach(function (ingredient) {
-            var liEl = document.createElement('li');
-            liEl.textContent = ingredient.text;
-            ingredientsEl.appendChild(liEl);
-        });
-        cardEl.appendChild(ingredientsEl);
-
-        return cardEl;
-    }
 });

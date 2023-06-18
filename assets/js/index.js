@@ -50,6 +50,7 @@ $(document).ready(function () {
         cardEl.classList.add('card');
 
         var titleEl = document.createElement('a');
+        titleEl.classList.add('card-header');
         titleEl.textContent = recipe.label;
         titleEl.href = 'endpoint.html';
         titleEl.target = '_blank'; // Open the URL in a new tab
@@ -69,8 +70,10 @@ $(document).ready(function () {
         recipe.ingredients.forEach(function (ingredient) {
             var liEl = document.createElement('li');
             liEl.textContent = ingredient.text;
+            liEl.classList.add('card-body');
             ingredientsEl.appendChild(liEl);
         });
+
         cardEl.appendChild(ingredientsEl);
 
         return cardEl;

@@ -34,8 +34,14 @@
   font-weight: bold;
 }
 
-.btn-primary {
+.btn:hover {
   background-color: rgb(14, 99, 133);
+
+}
+
+.btn-primary {
+  background-color: #333;
+
   color: white;
   border: none;
   border-radius: 5px;
@@ -53,6 +59,11 @@
   color: white;
   padding: 10px;
   font-weight: bold;
+}
+
+.card-header:hover {
+  background-color: #333;
+  cursor: pointer;
 }
 
 .card-body {
@@ -78,6 +89,11 @@
 .btn-link {
   color: white;
   text-decoration: none;
+  text-align: center;
+}
+
+.btn-link:hover {
+  background-color: #333;
 }
 
 .collapse {
