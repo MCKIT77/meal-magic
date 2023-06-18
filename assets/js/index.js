@@ -5,20 +5,7 @@ $(document).ready(function () {
     var authUrl = 'app_id=3363fcd5&app_key=fee91a78bd642adc08094cc80cd02704';
     var searchBtnEl = $('#searchBtn');
 
-    document.querySelectorAll('.form-check-input').forEach(function (toggle) {
-        toggle.addEventListener('change', function () {
-            // Handle toggle change event
-            if (this.checked) {
-                // Toggle is checked
-                console.log('Toggle is checked:', this.id);
-                // Perform desired action
-            } else {
-                // Toggle is unchecked
-                console.log('Toggle is unchecked:', this.id);
-                // Perform desired action
-            }
-        });
-    });
+
 
     // This function will take user input to build the request link for the API call
     function buildReq(event) {
@@ -41,15 +28,16 @@ $(document).ready(function () {
             });
 
             // Build the request URL with query, health, and diet parameters
-            var endReqUrl = `${baseEdamamUrl}&q=${queryQ}&${authUrl}&imageSize=LARGE`;
+            var endReqUrl = `${baseEdamamUrl}&q=${encodeURIComponent(queryQ)}&${authUrl}&imageSize=LARGE`;
 
-            if (healthQ.length > 0) {
-                endReqUrl += `&health=${healthQ.join(',')}`;
-            }
+            healthQ.forEach(function (option) {
+                endReqUrl += `&health=${encodeURIComponent(option)}`;
+            });
 
-            if (dietQ.length > 0) {
-                endReqUrl += `&diet=${dietQ.join(',')}`;
-            }
+            dietQ.forEach(function (option) {
+                endReqUrl += `&diet=${encodeURIComponent(option)}`;
+            });
+
             console.log(endReqUrl);
 
             getReq(endReqUrl);
@@ -61,8 +49,10 @@ $(document).ready(function () {
         var cardEl = document.createElement('div');
         cardEl.classList.add('card');
 
-        var titleEl = document.createElement('h2');
+        var titleEl = document.createElement('a');
         titleEl.textContent = recipe.label;
+        titleEl.href = 'endpoint.html'; // Set the URL for the recipe label
+        titleEl.target = '_blank'; // Open the URL in a new tab
         cardEl.appendChild(titleEl);
 
         var imageEl = document.createElement('img');
