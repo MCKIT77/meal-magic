@@ -45,13 +45,12 @@
 }
 
 .btn:hover {
-  background-color: rgb(117, 45, 126);
+  background-color: rgb(26, 1, 29);
 
 }
 
 .btn-primary {
   background-color: #333;
-
   color: white;
   border: none;
   border-radius: 5px;
@@ -63,6 +62,7 @@
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   color: rgb(14, 99, 133);;
+  border-radius: 15%;
 }
 
 .card-header {
@@ -87,6 +87,8 @@
   height: auto;
   border-radius: 25%;
   align-self: center;
+  margin-top: 10px;
+
 
 }
 
@@ -108,13 +110,20 @@
   background-color: #333;
 }
 
+#recipeForm{
+ margin: auto;
+  width: 23%;
+}
 .collapse {
   background-color: #fff;
   padding: 1rem;
   border: 1px solid #dee2e6;
   border-top: none;
 }
-
+#accordion{
+  margin: auto;
+  width: 38%;
+}
 
 
 .form-group {
