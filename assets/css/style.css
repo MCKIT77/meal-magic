@@ -5,7 +5,7 @@
   font-family: 'Ubuntu', sans-serif;
   font-size: 16px;
   background-color: rgb(244, 236, 245);
- 
+
 }
 
 
@@ -61,7 +61,8 @@
   background-color: transparent;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  color: rgb(14, 99, 133);;
+  color: rgb(14, 99, 133);
+  ;
   border-radius: 15%;
 }
 
@@ -76,6 +77,15 @@
 .card-header:hover {
   background-color: #333;
   cursor: pointer;
+}
+
+.card-title {
+  background-color: rgb(14, 99, 133);
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 16px;
+
 }
 
 .card-body {
@@ -99,28 +109,38 @@
   align-self: left;
 }
 
+.card-img-alt {
+  width: 90%;
+  height: auto;
+  border-radius: 35%;
+  align-self: left;
+}
+
 
 .btn-link {
-  color: white;
+  color: #333;
   text-decoration: none;
   text-align: center;
 }
 
 .btn-link:hover {
   background-color: #333;
+  font: white;
 }
 
-#recipeForm{
- margin: auto;
+#recipeForm {
+  margin: auto;
   width: 23%;
 }
+
 .collapse {
   background-color: #fff;
   padding: 1rem;
   border: 1px solid #dee2e6;
   border-top: none;
 }
-#accordion{
+
+#accordion {
   margin: auto;
   width: 38%;
 }
@@ -162,7 +182,8 @@ a {
   grid-template-columns: 33.33% 33.33% 33.33%;
   grid-gap: 20px;
 }
-.searchbar{
+
+.searchbar {
   display: flex;
   width: 150px;
 }
