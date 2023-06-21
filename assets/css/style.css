@@ -4,6 +4,7 @@
   box-sizing: border-box;
   font-family: 'Ubuntu', sans-serif;
   font-size: 16px;
+  background-color: rgb(244, 236, 245);
  
 }
 
@@ -28,12 +29,11 @@
 
 
 .container-lg {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
+  margin-top: 50px;
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
+  grid-gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 
@@ -59,7 +59,7 @@
 
 
 .card {
-  background-color: white;
+  background-color: transparent;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   color: rgb(14, 99, 133);;
@@ -97,7 +97,7 @@
   align-self: left;
 }
 
-/* Link Button */
+
 .btn-link {
   color: white;
   text-decoration: none;
@@ -114,6 +114,7 @@
   border: 1px solid #dee2e6;
   border-top: none;
 }
+
 
 
 .form-group {
@@ -138,23 +139,24 @@ a {
   font-size: 2rem;
 }
 
+
 .link {
   font-size: 1.2rem;
 }
 
-.searchbar{
-  display: flex;
-  max-width: 150px;
-}
 
-/* Default styles */
+
+
 
 .container-lg {
   display: grid;
   grid-template-columns: 33.33% 33.33% 33.33%;
   grid-gap: 20px;
 }
-
+.searchbar{
+  display: flex;
+  width: 150px;
+}
 
 
 @media (max-width: 768px) {
