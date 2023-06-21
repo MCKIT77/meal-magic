@@ -4,6 +4,8 @@
   box-sizing: border-box;
   font-family: 'Ubuntu', sans-serif;
   font-size: 16px;
+  background-color: rgb(244, 236, 245);
+ 
 }
 
 
@@ -18,12 +20,20 @@
   padding: 10px;
 }
 
+.line {
+  height: 5px;
+  width: 100%;
+  border: none;
+  background: linear-gradient(to right, rgb(255, 0, 221), rgb(34, 16, 99), rgb(138, 39, 39));
+}
 
-.container {
-  width: 90%;
-  height: auto;
-  max-width: 1200px;
-  margin: 0 auto;
+
+.container-lg {
+  margin-top: 50px;
+  width: 100%;
+  display: grid;
+  grid-gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 
@@ -35,13 +45,12 @@
 }
 
 .btn:hover {
-  background-color: rgb(14, 99, 133);
+  background-color: rgb(26, 1, 29);
 
 }
 
 .btn-primary {
   background-color: #333;
-
   color: white;
   border: none;
   border-radius: 5px;
@@ -49,9 +58,11 @@
 
 
 .card {
-  background-color: white;
+  background-color: transparent;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: rgb(14, 99, 133);;
+  border-radius: 15%;
 }
 
 .card-header {
@@ -59,6 +70,7 @@
   color: white;
   padding: 10px;
   font-weight: bold;
+  font-size: 16px;
 }
 
 .card-header:hover {
@@ -73,8 +85,10 @@
 .card-img-top {
   width: 60%;
   height: auto;
-  border-radius: 35%;
+  border-radius: 25%;
   align-self: center;
+  margin-top: 10px;
+
 
 }
 
@@ -85,7 +99,7 @@
   align-self: left;
 }
 
-/* Link Button */
+
 .btn-link {
   color: white;
   text-decoration: none;
@@ -96,11 +110,19 @@
   background-color: #333;
 }
 
+#recipeForm{
+ margin: auto;
+  width: 23%;
+}
 .collapse {
   background-color: #fff;
   padding: 1rem;
   border: 1px solid #dee2e6;
   border-top: none;
+}
+#accordion{
+  margin: auto;
+  width: 38%;
 }
 
 
@@ -126,6 +148,35 @@ a {
   font-size: 2rem;
 }
 
+
 .link {
   font-size: 1.2rem;
+}
+
+
+
+
+
+.container-lg {
+  display: grid;
+  grid-template-columns: 33.33% 33.33% 33.33%;
+  grid-gap: 20px;
+}
+.searchbar{
+  display: flex;
+  width: 150px;
+}
+
+
+@media (max-width: 768px) {
+  .container-lg {
+    grid-template-columns: 50% 50%;
+  }
+}
+
+@media (max-width: 576px) {
+  .container-lg {
+    grid-template-columns: 100%;
+    grid-gap: 10px;
+  }
 }
