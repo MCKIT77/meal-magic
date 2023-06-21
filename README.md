@@ -17,12 +17,9 @@ edamam api: "https://api.edamam.com/api/recipes/v2"
 youtube api: "https://www.googleapis.com/youtube/v3"
 
 ## how-it-looks
-![HomePage](assets/img/finished-1.PNG)
+![Homepage](assets/img/finished-1.PNG)
 ![Searched](assets/img/finished-2.PNG)
-![Redirection](assets/img/finished-3.PNG)
-![Redirection-2](assets/img/finished-4.PNG)
-
-
-
+![Displayed](assets/img/finished-3.PNG)
+![Displayed-2](assets/img/finished-4.PNG)
 
 
